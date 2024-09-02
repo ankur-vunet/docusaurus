@@ -107,6 +107,7 @@ const getPlugin = async (
     url: 'https://docusaurus.io',
     markdown,
     future: {},
+    staticDirectories: ['static'],
   } as DocusaurusConfig;
   return pluginContentBlog(
     {
@@ -220,12 +221,19 @@ describe('blog plugin', () => {
       authors: [
         {
           name: 'Yangshun Tay (translated)',
+          imageURL: undefined,
+          key: null,
+          page: null,
+          socials: {},
         },
         {
           email: 'lorber.sebastien@gmail.com',
           key: 'slorber',
           name: 'Sébastien Lorber (translated)',
           title: 'Docusaurus maintainer (translated)',
+          imageURL: undefined,
+          socials: undefined,
+          page: {permalink: '/blog/authors/slorber-custom-permalink-localized'},
         },
       ],
       date: new Date('2018-12-14'),
@@ -319,6 +327,8 @@ describe('blog plugin', () => {
           title: 'Docusaurus maintainer',
           url: 'https://sebastienlorber.com',
           imageURL: undefined,
+          page: null,
+          key: null,
         },
       ],
       prevItem: undefined,
